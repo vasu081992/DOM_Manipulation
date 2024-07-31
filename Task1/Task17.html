@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" href="index.css">
+
+</head>
+<style>
+  .welcome{
+    background-color: brown;
+    color:yellow;
+  }
+</style>
+<body>
+
+  <h2>Notification is on the right</h2>
+
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum aspernatur quam ex eaque inventore quod voluptatem adipisci omnis nemo nulla fugit iste numquam ducimus cumque minima porro ea quidem maxime necessitatibus beatae labore soluta voluptatum
+    magnam consequatur sit laboriosam velit excepturi laborum sequi eos placeat et quia deleniti? Corrupti velit impedit autem et obcaecati fuga debitis nemo ratione iste veniam amet dicta hic ipsam unde cupiditate incidunt aut iure ipsum officiis soluta
+    temporibus. Tempore dicta ullam delectus numquam consectetur quisquam explicabo culpa excepturi placeat quo sequi molestias reprehenderit hic at nemo cumque voluptates quidem repellendus maiores unde earum molestiae ad.
+  </p>
+
+  <script>
+    function showNotification({top = 0, right = 0, className, html}) {
+
+       let div1 = document.createElement('div');
+
+       div1.className="notification";
+
+       if (className,top,right) {
+        div1.classList.add(className); //adding default class from function call
+        div1.style.top = top + 'px' 
+        div1.style.right = right + 'px';
+      }
+
+    
+      //  div1.style.top = top + 'px' 
+      //  div1.style.right = right + 'px';
+
+       div1.innerHTML=html;
+
+       document.body.append(div1)
+    
+       setTimeout(() => div1.remove(), 1200);
+      }
+
+    // test it
+    let i = 1;
+    setInterval(() => {
+      showNotification({
+        top: 20,
+        right: 80,
+        html: 'Hello ' + i++,
+        className: "welcome"
+      });
+    }, 2000);
+  </script>
+
+
+</body>
+</html>

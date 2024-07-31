@@ -1,0 +1,43 @@
+<!-- Clear the element
+importance: 5
+Create a function clear(elem) that removes everything from the element.
+
+<ol id="elem">
+  <li>Hello</li>
+  <li>World</li>
+</ol>
+
+<script>
+  function clear(elem) { /* your code */ }
+
+  clear(elem); // clears the list
+</script> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ol id="elem">
+    <li>Hello</li>
+    <li>World</li>
+  </ol>
+  
+  <script>
+    function clear(elem) {
+      elem.innerHTML = '';
+
+    }
+  
+    clear(elem); // clears the list
+  </script>
+
+
+
+</body>
+</html>

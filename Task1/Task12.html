@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MODIFYING THE DOCUMENT</title>
+  <style>
+    .alert {
+      padding: 15px;
+      border: 1px solid #d6e9c6;
+      border-radius: 4px;
+      color: #3c763d;
+      background-color: #dff0d8;
+    }
+    </style>
+</head>
+<body>
+  
+
+  <script>
+    let div = document.createElement('div');//Create a div
+    div.className = "alert"; // give classname
+    div.innerHTML = "<strong>Hi there!</strong> You've read an important message."; // inner html content with text
+  
+    document.body.append(div); //adding to the dom page 
+  </script>
+
+
+</body>
+</html>
