@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>The</li>
+    <li>test</li>
+  </ul>
+  <ul>
+    <li>has</li>
+    <li>passed</li>
+  </ul>
+
+  <p>Hi vasu ! </p>
+  <p>HI vinee ! </p>
+
+
+  <h1 id="heading" >Heading tag 1</h1>
+
+  <h2 id="heading" >  Heading tag 2</h2>
+
+  <script>
+    let elements = document.querySelectorAll('ul > li:last-child');
+  
+    for (let elem of elements) {
+      alert(elem.innerHTML); // "test", "passed"
+    }
+
+    let elem2 = document.querySelector('li')//selects the first li in the document
+    elem2.textContent="Hey vasu"
+
+    let elem3 = document.querySelector('p') // selects first p tag
+    elem3.style.color="red"
+
+    let elem4= document.querySelector('h1')
+    elem4.style.backgroundColor="yellow"
+
+    
+  </script>
+</body>
+</html>
