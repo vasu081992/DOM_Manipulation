@@ -1,0 +1,64 @@
+<!-- Create a sliding menu
+importance: 5
+Create a menu that opens/collapses on click:
+
+
+P.S. HTML/CSS of the source document is to be modified. -->
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+
+<link href="Task5.css" rel="stylesheet">
+<body>
+
+<p id="item1"> <span id ="item2">▶ </span> <span id ="item3"> ▼ </span> Sweeties (click me)! </p> 
+
+  <ul id="list">
+
+    <li>Cake</li>
+    <li>Donut</li>
+    <li>Honey</li>
+  </ul>
+
+
+  <script>
+
+    let elem1 = document.getElementById('item1')
+
+    elem1.addEventListener('click',handleClick)
+
+     let elem2 = document.getElementById('item3')
+
+     elem2.hidden=true;
+ 
+     let elem3 = document.getElementById('list')
+
+     elem3.hidden=true;
+
+
+    function handleClick(){
+
+  if(elem2.hidden && elem3.hidden){
+     
+       document.getElementById('list').hidden=false;
+       document.getElementById('item3').hidden=false;
+       document.getElementById('item2').hidden=true;
+
+
+    }
+    else{
+      document.getElementById('list').hidden=true;
+       document.getElementById('item3').hidden=true;
+       document.getElementById('item2').hidden=false;
+    }
+  }
+
+  </script>
+</body>
+</html>
+
+
