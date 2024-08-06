@@ -1,0 +1,85 @@
+
+<head>
+  <meta charset="utf-8">
+
+  <link href="Task4.css" rel="stylesheet">
+</head>
+
+<body style="height:2000px">
+
+  Click on a field to move the ball there.
+  <br> The ball should never leave the field.
+
+
+  <div id="field">
+    <img src="https://en.js.cx/clipart/ball.svg" id="ball"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+  </div>
+<script>
+
+field.onclick = function(event) {
+
+// window-relative field coordinates
+let fieldCoords = field.getBoundingClientRect();
+
+console.log("fieldCoords",fieldCoords)
+
+console.log(event.clientX, event.clientY)
+
+
+console.log(document.getElementById('field').clientLeft)
+console.log(document.getElementById('field').clientWidth)
+
+// the ball has position:absolute, the field: position:relative
+// so ball coordinates are relative to the field inner left-upper corner
+let ballCoords = {
+  top: event.clientY - fieldCoords.top - field.clientTop - ball.clientHeight / 2,
+  left: event.clientX - fieldCoords.left - field.clientLeft - ball.clientWidth / 2
+};
+
+
+
+//notes 
+
+/*
+here fieldCoords are position of the field with respect to view port which is always fixed 
+
+clientX and clientY are x and y distance from viewport
+
+clientTop returns width of top border
+
+clientLeft returns width of left border of element 
+
+clientHeight is total height of element without border and margin and scroll bars
+
+clientWidth is total width excluding borders ie inner width
+
+*/
+
+console.log(ballCoords.left)
+
+// prevent crossing the top field boundary
+if (ballCoords.top < 0) ballCoords.top = 0;
+
+// prevent crossing the left field boundary
+if (ballCoords.left < 0) ballCoords.left = 0;
+
+
+// // prevent crossing the right field boundary
+if (ballCoords.left + ball.clientWidth > field.clientWidth) {
+  ballCoords.left = field.clientWidth - ball.clientWidth;
+}
+
+// prevent crossing the bottom field boundary
+if (ballCoords.top + ball.clientHeight > field.clientHeight) {
+  ballCoords.top = field.clientHeight - ball.clientHeight;
+}
+
+ball.style.left = ballCoords.left + 'px';
+ball.style.top = ballCoords.top + 'px';
+}
+
+</script>
+
+</body>
+</html>
