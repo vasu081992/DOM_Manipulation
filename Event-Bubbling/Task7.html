@@ -43,31 +43,98 @@
     </li>
   </ul>
   <script>
-    // move all text into <span>
-    // they occupy exactly the place necessary for the text,
-      for (let li of tree.querySelectorAll('li')) { // we add this span to make sure only the text area is clickable and not entire row
-        let span = document.createElement('span');
-        li.prepend(span);
-        span.append(span.nextSibling); // move the text node into span
-      }
+   
+   let LiItems = document.querySelectorAll('li');
 
-    // catch clicks on whole tree
-    tree.onclick = function(event) {
+   console.log(LiItems)
+  
 
-      if (event.target.tagName != 'SPAN') {
-        return;
-      }
-     
-      let parentNode11 = event.target.parentNode;
-      console.log("parentNode11",parentNode11)
-      let childrenContainer = event.target.parentNode.querySelector('ul');
+   for(let item of LiItems){
 
-      if (!childrenContainer) return; // no children
+    let spanElem = document.createElement('span');
 
-      childrenContainer.hidden = !childrenContainer.hidden;
-    }
+    item.prepend(spanElem);
 
+    spanElem.append(spanElem.nextSibling);
 
+   }
+
+ 
+   tree.onclick = function (){
+  
+    if(event.target.tagName==='SPAN'){
+     let parent = event.target.parentNode; // selecting its parent if it has one
+ 
+     if(!parent.tagName){
+    return
+
+   }
+   else{
+    console.log(parent.tagName);
+   
+    let realChildren = parent.querySelector('ul'); // selecting the first ul inside parent to hide
+    realChildren.hidden= !realChildren.hidden
+   }
+  }
+
+  }
+
+    
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // move all text into <span>
+  // they occupy exactly the place necessary for the text,
+    for (let li of tree.querySelectorAll('li')) { // we add this span to make sure only the text area is clickable and not entire row
+      let span = document.createElement('span');
+      li.prepend(span);
+      span.append(span.nextSibling); // move the text node into span
+    }
+
+  // catch clicks on whole tree
+  tree.onclick = function(event) {
+
+    if (event.target.tagName != 'SPAN') {
+      return;
+    }
+   
+    let parentNode11 = event.target.parentNode;
+    console.log("parentNode11",parentNode11)
+    let childrenContainer = event.target.parentNode.querySelector('ul');
+
+    if (!childrenContainer) return; // no children
+
+    childrenContainer.hidden = !childrenContainer.hidden;
+  } -->
