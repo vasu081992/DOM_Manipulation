@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<link rel="stylesheet" href="Task7.css">
+<body>
+
+  <ul class="tree" id="tree">
+    <li>Animals
+      <ul>
+        <li>Mammals
+          <ul>
+            <li>Cows</li>
+            <li>Donkeys</li>
+            <li>Dogs</li>
+            <li>Tigers</li>
+          </ul>
+        </li>
+        <li>Other
+          <ul>
+            <li>Snakes</li>
+            <li>Birds</li>
+            <li>Lizards</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Fishes
+      <ul>
+        <li>Aquarium
+          <ul>
+            <li>Guppy</li>
+            <li>Angelfish</li>
+          </ul>
+        </li>
+        <li>Sea
+          <ul>
+            <li>Sea trout</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <script>
+    // move all text into <span>
+    // they occupy exactly the place necessary for the text,
+      for (let li of tree.querySelectorAll('li')) { // we add this span to make sure only the text area is clickable and not entire row
+        let span = document.createElement('span');
+        li.prepend(span);
+        span.append(span.nextSibling); // move the text node into span
+      }
+
+    // catch clicks on whole tree
+    tree.onclick = function(event) {
+
+      if (event.target.tagName != 'SPAN') {
+        return;
+      }
+     
+      let parentNode11 = event.target.parentNode;
+      console.log("parentNode11",parentNode11)
+      let childrenContainer = event.target.parentNode.querySelector('ul');
+
+      if (!childrenContainer) return; // no children
+
+      childrenContainer.hidden = !childrenContainer.hidden;
+    }
+
+
+  </script>
+</body>
+</html>
