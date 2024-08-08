@@ -3,6 +3,7 @@
   height:20px;
   background-color: rgb(247, 230, 230);
   overflow: hidden;
+  border-radius: 5px;
 }
 
 li{
