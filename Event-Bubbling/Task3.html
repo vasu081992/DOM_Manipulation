@@ -83,13 +83,12 @@
     }
 
 
-      function highlight(node) {
+      function highlight(selectedElem) {
       if (selectedTd) {
         selectedTd.classList.remove('selected1');
       }
-      selectedTd = node;
+      selectedTd = selectedElem;
       console.log("selectedTd",selectedTd)
-      console.log("selectedTd",node)
       selectedTd.classList.add('selected1');
     } 
 
