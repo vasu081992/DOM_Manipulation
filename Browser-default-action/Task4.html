@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<button id="elem">Right-click here for the button context menu 
+</button>
+<button id="elem1">Another button</button>
+
+<p>Right-click here for the document context menu</p>
+
+
+<script>
+
+    elem1.oncontextmenu = function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    alert("Button1 context menu");
+  };
+
+
+  elem.oncontextmenu = function(event) {
+     event.preventDefault();
+    event.stopPropagation();
+    alert("Button context menu");
+  };
+
+  document.oncontextmenu = function(event) {
+     event.preventDefault();
+    alert("Document context menu");
+  };
+
+</script>
+</body>
+</html>

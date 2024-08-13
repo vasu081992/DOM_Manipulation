@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    #contents {
+      padding: 5px;
+      border: 1px green solid;
+    }
+  </style>
+</head>
+
+<body>
+
+  <fieldset id="contents">
+    <legend>#contents</legend>
+    <p>
+      How about to read <a href="https://wikipedia.org">Wikipedia</a> or visit <a href="https://w3.org"><i>W3.org</i></a> and learn about modern standards?
+    </p>
+  </fieldset>
+
+
+  <script>
+ 
+ contents.onclick = function(event){
+
+    let href = event.target.closest('a').getAttribute('href')
+    console.log(href)
+  let userConfirmed = confirm(`Are you sure you want to move to ${href}?`);
+  // confirm(`Are you sure you want to move to ${href}`);
+
+  if (!userConfirmed) {
+      event.preventDefault();
+    }
+ }
+
+  </script>
+</body>
+</html>
