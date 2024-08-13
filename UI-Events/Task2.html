@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <button id="button">Alt+Shift+Click on me!</button>
+
+  <input onmousemove="this.value=event.clientX+':'+event.clientY" value="Mouse over me">
+
+
+  <span ondblclick="alert('dblclick')">Double-click me</span>
+
+
+  <div oncopy="alert('Copying forbidden!');return false">
+    Dear user,
+    The copying is forbidden for you.
+    If you know JS or HTML, then you can get everything from the page source though.
+  </div>
+
+  
+<script>
+  button.onclick = function(event) {
+    if (event.altKey && event.shiftKey && event.ctrlKey) {
+      alert('Hooray!');
+    }
+  };
+</script>
+</body>
+</html>

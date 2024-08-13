@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Events</title>
+</head>
+<body>
+  
+  <button id="button1"> Click me to know which mouse click you made !
+  </button>
+
+
+  <script>
+
+const myButton = document.getElementById('button1');
+
+    myButton.addEventListener('mousedown', function(event) {
+      switch (event.button) {
+        case 0:
+          console.log('Left mouse button clicked');
+          break;
+        case 1:
+          console.log('Middle mouse button clicked');
+          break;
+        case 2:
+          console.log('Right mouse button clicked');
+          break;
+        default:
+          console.log('Other mouse button clicked');
+          break;
+      }
+    });
+
+    // Optional: prevent the context menu from appearing on right-click
+    myButton.addEventListener('contextmenu', function(event) {
+      event.preventDefault(); // Prevents the default context menu
+      console.log('Right-click context menu prevented');
+    });
+  </script>
+</body>
+</html>
