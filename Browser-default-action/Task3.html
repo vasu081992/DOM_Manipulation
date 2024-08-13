@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>Right-click shows browser context menu</button>
+
+  <button oncontextmenu="alert('Draw our menu'); event.preventDefault()"> Method 1 of prevent default </button>
+
+
+  <button oncontextmenu="alert('Draw our menu'); return false"> Right-click shows our context menu - Method 2</button>
+
+  
+</body>
+</html>
